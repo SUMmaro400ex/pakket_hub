@@ -123,6 +123,18 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="pakket_hub_core (v[path], /Users/solid/pakket_hub_core) [path][gem]">
+        <CLASSES>
+          <root url="file://$USER_HOME$/pakket_hub_core/bin" />
+          <root url="file://$USER_HOME$/pakket_hub_core/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$USER_HOME$/pakket_hub_core/bin" />
+          <root url="file://$USER_HOME$/pakket_hub_core/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v4.2.5.1, rbenv: 2.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v4.2.5.1, rbenv: 2.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview (v4.2.5.1, rbenv: 2.2.2) [gem]" level="application" />
