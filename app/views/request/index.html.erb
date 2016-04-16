@@ -1,0 +1,23 @@
+<div id='container'>
+  <h3> requester page </h3>
+  <div class="col">
+    <%= form_tag '/person', class: 'col s12' do |f|%>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <%= label_tag(:country, "Country",class: 'validate') %>
+        <%= collection_select(:city_id, City.all, :id, :name) %> %>
+      </div>
+      <div class="input-field col s6">
+        <%= label_tag(:first_name, "First Name",class: 'validate') %>
+        <%= text_field_tag(:first_name,nil,class: 'validate') %>
+      </div>
+      <div class="input-field col s6">
+        <%= label_tag(:last_name, "Last Name", class: 'validate') %>
+        <%= text_field_tag(:last_name,nil, class: 'validate') %>
+      </div>  
+    </div>
+    <%end%>
+  </div>
+</div>
+  
