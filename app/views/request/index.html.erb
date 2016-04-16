@@ -1,0 +1,16 @@
+<h3> requester page </h3>
+<div class="col">
+  <%= form_tag '/person', class: 'col s12' do |f|%>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= label_tag(:first_name, "First Name",class: 'validate',type: 'text') %>
+      <%= text_field_tag(:first_name,nil,class: 'validate',type:"text") %>
+    </div>
+    <div class="input-field col s6">
+      <%= label_tag(:last_name, "Last Name", class: 'validate',type: 'text') %>
+      <%= text_field_tag(:last_name,nil, class: 'validate',type:"text") %>
+    </div>
+  </div>
+  <%end%>
+</div>
+  
