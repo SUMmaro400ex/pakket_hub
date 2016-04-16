@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416165057) do
+ActiveRecord::Schema.define(version: 20160416231705) do
 
   create_table "contact_phone_numbers", force: :cascade do |t|
     t.string "type",            limit: 64,  null: false
@@ -29,6 +29,26 @@ ActiveRecord::Schema.define(version: 20160416165057) do
   end
 
   add_index "contacts", ["surname", "name"], name: "index_contacts_on_surname_and_name", using: :btree
+
+  create_table "credit_cards", force: :cascade do |t|
+    t.integer  "user_id",          limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "first_name",       limit: 255
+    t.string   "last_name",        limit: 255
+    t.string   "number",           limit: 255
+    t.string   "address_line_1",   limit: 255
+    t.string   "address_line_2",   limit: 255
+    t.string   "city",             limit: 255
+    t.string   "country",          limit: 255
+    t.string   "zipcode",          limit: 255
+    t.string   "state",            limit: 255
+    t.string   "expiration_month", limit: 255
+    t.string   "expiration_year",  limit: 255
+    t.string   "cvv",              limit: 255
+  end
+
+  add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
 
   create_table "exchange_locations", force: :cascade do |t|
     t.integer "exchange_id", limit: 4,  null: false
@@ -143,4 +163,5 @@ ActiveRecord::Schema.define(version: 20160416165057) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "credit_cards", "users"
 end
