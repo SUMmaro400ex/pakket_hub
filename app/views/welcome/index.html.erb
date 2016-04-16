@@ -1,20 +1,31 @@
-<ul id="dropdown1" class="dropdown-content">
-  <li><a class="drop-menu" href="#!">Login</a></li>
-  <li class="divider"></li>
-  <li><a class="drop-menu" href="#!">Sign Up</a></li>
-</ul>
 <nav id="landing">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo"><img id="pakket-logo" src="<%= asset_path("logo")%>"></a>
     <ul class="right hide-on-med-and-down">
       <li><a class="scroll" href="#more-info">More Info</a></li>
       <li><a class="scroll" href="#faq">FAQ</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Get Started<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li>
+        <form class="col s2">
+          <div class="left input-field col s1">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Login</label>
+          </div>
+          <div class="right input-field col s1">
+            <i class="material-icons prefix">lock</i>
+            <input id="lock_outline" type="text" class="validate">
+            <label for="lock_outline">Password</label>
+          </div>
+        </form>
+      </li>
     </ul>
-  </div>
+
+</div>
 </nav>
+<div class="row">
 <div id="top-parallax" class="parallax-container">
   <div class="parallax"><img class="parallax-image" src="<%=asset_path("packages")%>"></div>
+</div>
 </div>
 <div class="section white">
     <div class="row container, center-align">
