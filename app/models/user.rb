@@ -1,4 +1,4 @@
-class User < Pakket::BaseModel
+class User < PakketHub::BaseModel
   include PakketHub::IsAUser
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
