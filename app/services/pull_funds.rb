@@ -1,7 +1,12 @@
 class PullFunds
+  attr_accessor :amount
 
+  def initialize(amount)
+    @amount = amount
+  end
 # Sample post body payload
-  def pay_load
+
+  def post_pay_load
   '''{
     "businessApplicationId": "AA",
     "merchantCategoryCode": 6012,
@@ -29,7 +34,7 @@ class PullFunds
     },
     "senderPrimaryAccountNumber": "4005520000011126",
     "senderCurrencyCode": "USD",
-    "surcharge": "2.00",
+    "surcharge": "1.00",
     "localTransactionDateTime": "2016-04-16T10:32:52",
     "senderCardExpiryDate": "2013-03",
     "pinData": {
@@ -47,11 +52,11 @@ class PullFunds
     },
     "acquiringBin": 409999,
     "acquirerCountryCode": "101",
-    "amount": "112.00"
+    "amount": '''+"#{amount}"'''
   }'''
   end
 
-  def test_pull_funds
+  def post_request
     base_uri = 'visadirect/'
     resource_path = 'fundstransfer/v1/pullfundstransactions/'
     url = 'https://sandbox.api.visa.com/' + base_uri + resource_path
@@ -65,7 +70,7 @@ class PullFunds
           :method => :post,
           :url => url,
           :headers => headers,
-          :payload => pay_load,
+          :payload => post_pay_load,
           :user => user_id, :password => password,
           :ssl_client_key => OpenSSL::PKey::RSA.new(File.read(key_path)),
           :ssl_client_cert =>  OpenSSL::X509::Certificate.new(File.read(cert_path))
@@ -77,6 +82,6 @@ class PullFunds
   end
 
   def pull_funds
-    puts JSON.pretty_generate(JSON.parse(test_pull_funds()))
+    puts JSON.pretty_generate(JSON.parse(post_request))
   end
 end
