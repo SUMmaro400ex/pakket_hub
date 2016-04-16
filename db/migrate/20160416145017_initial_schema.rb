@@ -1,11 +1,5 @@
 class InitialSchema < ActiveRecord::Migration
   def up
-    create_table :users do |t|
-      t.integer :contact_id, null: false
-      t.string :status, null: false, limit: 32
-    end
-
-    add_index :users, [:contact_id]
 
     create_table :contacts do |t|
       t.string :name, null: false
