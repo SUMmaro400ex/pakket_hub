@@ -9,5 +9,8 @@ nav#landing{
   background-color: #FF5722;
 }
 #requester, #courrier{
-  background-color: #4CAF50;
+  background-color: #FF5722;
+}
+#pakket-logo{
+  height: 50px;
 }
