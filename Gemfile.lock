@@ -2,6 +2,8 @@ PATH
   remote: ../pakket_hub_core
   specs:
     pakket_hub_core (0.1.0)
+      activerecord
+      activesupport
 
 GEM
   remote: https://rubygems.org/
@@ -177,4 +179,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
