@@ -1,0 +1,13 @@
+.parallax-container {
+      height: 40vh;
+  }
+.parallax-image{
+  width: 100%;
+}
+
+nav#landing{
+  background-color: #FF5722;
+}
+#requester, #courrier{
+  background-color: #4CAF50;
+}
