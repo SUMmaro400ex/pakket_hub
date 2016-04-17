@@ -11,15 +11,15 @@ body {
 section{
 	padding:20px 0 20px 0;
 }
-section#otherpages .jumbotron{
+#otherpages{
     background:#1b222a url(wing.jpg) no-repeat center center fixed;
     background-size: 100%;
     color: #fff;
-    height: 140px;
+    height: 200px;
 
 }
 section#otherpages .col-md-6{
-
+	padding:0px 0 0px 0;
 
 }
 
