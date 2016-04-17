@@ -59,24 +59,25 @@ class InitialSchema < ActiveRecord::Migration
       t.string :city, limit: 64, null: false
       t.string :country, limit: 2, null: false
       t.string :state_code, limit: 2
-      t.integer :zip_5
-      t.integer :zip_4
-      t.integer :latitude
-      t.integer :longitude
+      t.string :descriptive_key
+      t.integer :latitude_int
+      t.integer :longitude_int
       t.integer :google_map_id
     end
 
-    add_index :locations, :latitude
-    add_index :locations, :longitude
+    add_index :locations, :descriptive_key
+    add_index :locations, :latitude_int
+    add_index :locations, :longitude_int
     add_index :locations, :state_code
-    add_index :locations, [:zip_5,:zip_4]
     
     create_table :travel_plans do |t|
       t.integer :courier_id, null: false
+      t.integer :location_id, null: false
+      t.integer :radius, null: false
       t.timestamp :start_time, null: false
       t.timestamp :end_time
-      t.timestamp :start_date, null: false
-      t.timestamp :end_date
+      t.date :start_date, null: false
+      t.date :end_date
       t.string :destination, null: false
     end
 
@@ -85,10 +86,12 @@ class InitialSchema < ActiveRecord::Migration
     create_table :requests do |t|
       t.integer :beneficiary_id, null: false
       t.integer :requestor_id, null: false
+      t.integer :location_id, null: false
+      t.integer :radius, null: false
       t.timestamp :start_time
       t.timestamp :end_time
-      t.timestamp :start_date
-      t.timestamp :end_date
+      t.date :start_date
+      t.date :end_date
       t.string :status, null: false, limit: 32
     end
 
