@@ -50,16 +50,6 @@ ActiveRecord::Schema.define(version: 20160417004524) do
 
   add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
 
-  create_table "debits", force: :cascade do |t|
-    t.integer  "user_id",                limit: 4
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.string   "transaction_identifier", limit: 255
-    t.string   "amount",                 limit: 255
-  end
-
-  add_index "debits", ["user_id"], name: "index_debits_on_user_id", using: :btree
-
   create_table "exchange_locations", force: :cascade do |t|
     t.integer "exchange_id", limit: 4,  null: false
     t.integer "location_id", limit: 4,  null: false
@@ -177,5 +167,4 @@ ActiveRecord::Schema.define(version: 20160417004524) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "credit_cards", "users"
-  add_foreign_key "debits", "users"
 end

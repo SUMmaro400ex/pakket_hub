@@ -1,0 +1,292 @@
+body {
+	
+}
+
+
+.em-text{
+	color:#fff !important;
+}
+
+
+section{
+	padding:20px 0 20px 0;
+}
+
+.jumbotron{
+	background:#1b222a url(wing.jpg) no-repeat top center;
+	color: #fff;
+	height: 600px;
+	overflow: none;
+
+}
+.jumbotron h1 {
+	margin-top: 90px;
+	text-align: center;
+	padding: 0 20px 0 40px;
+	color: #fff;
+}
+.jumbotron h2{
+	margin-top:20px;
+	color: #fff;
+	text-align: center;
+
+
+}
+section#topbuttons{
+	margin-top: 280px;
+}
+
+
+
+.jumbotron h4{
+	text-align: right;
+	padding: 80px 20px 80px 20px;
+
+
+}
+
+
+.navbar{
+	background: none !important;
+	background-color: transparent;
+   	background: transparent;
+   	border-color: transparent;
+   	color: #fff;
+
+
+}
+
+.navbar li{
+	padding-top: 10px;
+	float: right;
+	list-style: none !important;
+	font-size: 22px;
+	font-style: none;
+	color: #fff !important;
+
+}
+
+.color-me{
+    color:#fff;
+}
+
+.jumbotron p{
+	margin-bottom: 40px;
+
+}
+.jumbotron img.app-btn{
+	width: 40%;
+	margin-right: 30px;
+}
+
+.jumbotron img.showcase-img{
+	width: 100% !important;
+}
+
+img.demo{
+	width: 100%;
+	padding: 3px;
+	border: 1px solid #ccc;
+}
+
+
+section#howitworks{
+	padding-top: 20px;
+
+}
+section#howitworks h2{
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+section#howitworks p{
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+
+section#guide{
+	background:#fff url(boxcopy.jpg) no-repeat top center;
+	color: #fff;
+	
+}
+section#guide p{
+	padding: 40px 40px 10px 40px;
+	font-size: 22px;
+		
+}
+section#guide h1{
+	padding-bottom: 20px;
+	font-size: 48px;
+	text-align: left;
+}
+
+section#guide ul li{
+	padding-bottom: 40px;
+}
+
+section#guide ul{
+	margin: 0;
+	padding-bottom: 20px;
+	color: #fff;
+	font-size: 22px;
+
+}
+
+.col-md-1{
+	float: right !important;
+	color: #fff;
+	margin-right: 20px;
+	
+}
+.col-md-2{
+	float: right !important;
+	color: #fff;
+	margin-right: 20px;
+	margin-left: 40px;
+}
+
+
+
+
+section#title-bar{
+	padding: 0;
+	margin: 0;
+	height:80px;
+	background:#1caa98;
+	color:#fff;
+}
+
+section#title-bar h1{
+	margin-bottom: 20px;
+
+}
+
+
+section#Register_Earn h1{
+	padding-bottom: 10px;
+	font-size: 48px;
+	text-align: center;
+}
+
+section#Register_Earn h5{
+	padding-bottom: 40px;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+section#Register_Earn.btn{
+	padding:20px 40px 40px 20px`;
+	font-size: 48px;
+	text-align: center;
+}
+
+section#Start_campaign form{
+	padding: 20px 10px 80px 50px;
+	text-align: left;
+
+}
+
+section#Start_campaign.col-xs-12{
+	padding-top: 50px;
+	text-align: left;
+}
+
+section#Start_campaign h4{
+    text-align: center;
+}
+
+footer{
+	background: #333;
+	color: #fff;
+	padding: 30px 0 20px 0;
+}
+footer li{
+	float: left;
+	padding: 0 10px 0 10px;
+	list-style: none;
+}
+
+footer a{
+	color: #fff;
+}
+footer p{
+	float: right;
+}
+
+/* Adjust feedback icon position */
+section#Start_campaign .form-control-feedback {
+    right: 15px;
+}
+section#Start_campaign .selectContainer .form-control-feedback {
+    right: 25px;
+}
+
+
+/* MEDIA QUERIES */
+@media(max-width:1200px){
+
+}
+
+@media(max-width:991px){
+	.showcase-img{
+		display: none;
+	}
+}
+
+@media(min-width:768px) and (max-width: 990px){
+
+.jumbotron img.app-btn{
+	width: 30%;
+}
+
+.jumbotron{
+	height: 400px !important;
+	background-size: 100% 100%;
+}
+
+.jumbotron h1{
+	margin-top: 10px;
+}
+}
+
+@media(max-width:768px){
+
+.jumbotron{
+	height: 350px !important;
+	background-size: 100% 100%;
+}
+.jumbotron h1{
+	margin-top: 10px;
+}
+	
+}
+@media(max-width:500px){
+
+.jumbotron{
+	height: 450px !important;
+	background-size: 100% 100%;
+	background-image: none;
+	text-align: center;
+}
+
+.jumbotron img.app-btn{
+	width: 60%;
+	margin:0 auto 30px auto;
+	display: block; 
+}
+section#feature ul li{
+	font-size: 19px !important;
+}
+footer p{
+	float: none;
+	text-align: center;
+	padding-top: 20px;
+}
+
+	*/
+
+
+
+
