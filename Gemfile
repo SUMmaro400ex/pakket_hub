@@ -28,8 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pakket_hub_core', path: '../pakket_hub_core'
 
 gem 'rest-client'
-
-gem 'httparty'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
