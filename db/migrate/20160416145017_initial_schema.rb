@@ -60,25 +60,25 @@ class InitialSchema < ActiveRecord::Migration
       t.string :country, limit: 2, null: false
       t.string :state_code, limit: 2
       t.string :descriptive_key
-      t.integer :latitude_int
-      t.integer :longitude_int
+      t.decimal :latitude, precision: 7, scale: 5
+      t.decimal :longitude, precision: 7, scale: 5
       t.integer :google_map_id
     end
 
     add_index :locations, :descriptive_key
-    add_index :locations, :latitude_int
-    add_index :locations, :longitude_int
+    add_index :locations, :latitude
+    add_index :locations, :longitude
     add_index :locations, :state_code
     
     create_table :travel_plans do |t|
       t.integer :courier_id, null: false
       t.integer :location_id, null: false
+      t.integer :destination_id, null: false
       t.integer :radius, null: false
       t.timestamp :start_time, null: false
       t.timestamp :end_time
       t.date :start_date, null: false
       t.date :end_date
-      t.string :destination, null: false
     end
 
     add_index :travel_plans, [:start_date, :end_date]

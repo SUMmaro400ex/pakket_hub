@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :travel_plans
+  resources :pakket_hub_requests
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
