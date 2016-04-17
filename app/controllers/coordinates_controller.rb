@@ -20,6 +20,11 @@ class CoordinatesController < ApplicationController
 	@lat_middle = ((lat1 + lat2) / 2).round(5)
 	@lng_middle = ((lng1 + lng2) / 2).round(5)
 	render :show
+
+	response3 = RestClient.get "https://maps.googleapis.com/maps/api/geocode/json",
+	{:params => {'latlng' => "#{@lat_middle},#{@lng_middle}",
+	'key'=>'AIzaSyDazU0gvbBdl2aKSaBUMNHkqG6uVLYW7jI'}}
+
   end
   
 end
