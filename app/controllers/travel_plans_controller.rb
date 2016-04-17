@@ -10,6 +10,8 @@ class TravelPlansController < BaseController
     lng = JSON.parse(response)["results"][0]["geometry"]["location"]["lng"]
     params["request"]["location_attributes"][:latitude] = lat
     params["request"]["location_attributes"][:longitude] = lng
+    @lat = lat
+@lng = lng
 
     @pakket_hub_request = Request.new(params[:request])
     # @results = PakketHub::TravelPlanSearcher.search(@pakket_hub_request)

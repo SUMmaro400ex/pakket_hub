@@ -11,7 +11,8 @@ class RequestsController < BaseController
     lng = JSON.parse(response)["results"][0]["geometry"]["location"]["lng"]
     params["travel_plan"]["destination_attributes"][:latitude] = lat
     params["travel_plan"]["destination_attributes"][:longitude] = lng
-
+@lat = lat
+@lng = lng
 
     @travel_plan = TravelPlan.new(params[:travel_plan])
     @results = PakketHub::Request.all.to_a
