@@ -11,6 +11,18 @@ body {
 section{
 	padding:20px 0 20px 0;
 }
+section#otherpages .jumbotron{
+    background:#1b222a url(wing.jpg) no-repeat center center fixed;
+    background-size: 100%;
+    color: #fff;
+    height: 140px;
+
+}
+section#otherpages .col-md-6{
+
+
+}
+
 
 .jumbotron{
 	background:#1b222a url(wing.jpg) no-repeat center center fixed;
@@ -20,6 +32,8 @@ section{
 	overflow: none;
 
 }
+
+
 .jumbotron h1 {
 	margin-top: 90px;
 	text-align: center;
