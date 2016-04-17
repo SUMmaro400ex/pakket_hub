@@ -1,10 +1,69 @@
-<%= form_for @travel_plan, url: {controller: :requests, action: :search} do |travel_plan_form| %>
-  <%= travel_plan_form.text_field :radius %>
-  <%= travel_plan_form.text_field :start_date %>
-  <%= travel_plan_form.text_field :end_date %>
-  <%= travel_plan_form.fields_for :destination, @travel_plan.destination || Location.new do |location_form| %>
-    <%= location_form.text_field :latitude %>
-    <%= location_form.text_field :longitude %>
-  <% end %>
-  <%= travel_plan_form.submit %>
-<% end %>
+<div class="jumbotron" id="otherpages">
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <img id="logo" src="<%= asset_path("logo") %>">
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <h2>Create Travel Plan</h2>
+    <%= form_for @travel_plan, url: {controller: :requests, action: :search} do |travel_plan_form| %>
+    <%= travel_plan_form.label :radius %>
+    <%= travel_plan_form.text_field :radius %>
+    <%= travel_plan_form.label :start_date %>
+    <%= travel_plan_form.text_field :start_date %>
+    <%= travel_plan_form.label :end_date %>
+    <%= travel_plan_form.text_field :end_date %>
+    <%= travel_plan_form.fields_for :destination, @travel_plan.destination || Location.new do |location_form| %>
+      <%= location_form.label :latitude %>
+      <%= location_form.text_field :latitude %>
+      <%= location_form.label :longitude %>
+      <%= location_form.text_field :longitude %>
+      <% end %>
+      <%= travel_plan_form.submit %>
+    <% end %>
+  </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <footer>
+    <div>
+      <div>
+        <div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p>Copyright &copy; 2016, All rights Reserved</p>
+        </div>
+        <br>
+        <br>
+      </div>
+
+    </div>
+  </footer>
