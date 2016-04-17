@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417004524) do
+ActiveRecord::Schema.define(version: 20160417073604) do
 
   create_table "contact_phone_numbers", force: :cascade do |t|
     t.string "type",            limit: 64,  null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160417004524) do
     t.string  "amount",                 limit: 255
     t.string  "transaction_identifier", limit: 255
     t.string  "surcharge",              limit: 255
+    t.boolean "complete"
   end
 
   add_index "exchanges", ["beneficiary_id"], name: "index_exchanges_on_beneficiary_id", using: :btree
@@ -122,15 +123,19 @@ ActiveRecord::Schema.define(version: 20160417004524) do
   add_index "phone_numbers", ["area_code", "subscriber_number", "country_code"], name: "main_idx", unique: true, using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.integer  "beneficiary_id", limit: 4,  null: false
-    t.integer  "requestor_id",   limit: 4,  null: false
-    t.integer  "location_id",    limit: 4,  null: false
-    t.integer  "radius",         limit: 4,  null: false
+    t.integer  "beneficiary_id", limit: 4,   null: false
+    t.integer  "requestor_id",   limit: 4,   null: false
+    t.integer  "location_id",    limit: 4,   null: false
+    t.integer  "radius",         limit: 4,   null: false
     t.datetime "start_time"
     t.datetime "end_time"
     t.date     "start_date"
     t.date     "end_date"
-    t.string   "status",         limit: 32, null: false
+    t.string   "status",         limit: 32,  null: false
+    t.integer  "size_code",      limit: 4
+    t.string   "item",           limit: 255
+    t.string   "item_url",       limit: 255
+    t.string   "amount",         limit: 255
   end
 
   add_index "requests", ["start_date", "end_date"], name: "index_requests_on_start_date_and_end_date", using: :btree
@@ -144,6 +149,7 @@ ActiveRecord::Schema.define(version: 20160417004524) do
     t.date     "start_date",              null: false
     t.date     "end_date"
     t.string   "destination", limit: 255, null: false
+    t.integer  "size_code",   limit: 4
   end
 
   add_index "travel_plans", ["start_date", "end_date"], name: "index_travel_plans_on_start_date_and_end_date", using: :btree

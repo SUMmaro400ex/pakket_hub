@@ -4,9 +4,22 @@ Rails.application.routes.draw do
  # post 'coordinates' => 'coordinates#show'
   resources :geolocation
   resources :coordinates
+  resources :requests
+  resources :travel_plans
+
+  post 'requests/search' => 'requests#search'
+  post 'travel_plans/search' => 'travel_plans#search'
+  get 'about' => 'welcome#about'
+  get 'contact' => 'welcome#contact'
+  get 'privacy' => 'welcome#privacy'
 
 
   devise_for :users
+
+  resources :users
+
+  resources :travel_plans
+  resources :pakket_hub_requests
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

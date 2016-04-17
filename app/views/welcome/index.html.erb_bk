@@ -1,0 +1,80 @@
+<nav id="landing">
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo"><img id="pakket-logo" src="<%= asset_path("logo")%>"></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a class="scroll" href="#more-info">More Info</a></li>
+      <li><a class="scroll" href="#faq">FAQ</a></li>
+      <li>
+        <form class="col s2">
+          <div class="left input-field col s1">
+            <i class="material-icons prefix">account_circle</i>
+            <label for="icon_prefix">Login</label>
+            <input id="icon_prefix" type="text" class="validate">
+          </div>
+          <div class="right input-field col s1">
+            <i class="material-icons prefix">lock</i>
+            <input id="lock_outline" type="text" class="validate">
+            <label for="lock_outline">Password</label>
+          </div>
+        </form>
+      </li>
+    </ul>
+
+</div>
+</nav>
+<div class="row">
+<div id="top-parallax" class="parallax-container">
+  <div class="parallax"><img class="parallax-image" src="<%=asset_path("packages")%>"></div>
+</div>
+</div>
+<div class="section white">
+    <div class="row container, center-align">
+      <h1>Welcome to Pakket Hub</h1>
+      <h3>Peer to Peer Delivery</h3>
+      <p>Easily save money or earn money</p>
+      <%= link_to "Make a Request", "/requester/new", :id =>"requester", :class =>"waves-effect waves-light btn" %>
+      <%= link_to "Become a Courrier", "/courrier/new", :id => "courrier", :class =>"waves-effect waves-light btn"  %>
+    </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><img src="<%= asset_path("plane.jpg") %>"></div>
+</div>
+<div class="section white" id="more-info">
+    <div class="row container, center-align">
+      <h3>Find best prices to deliver your products bought online!</h3>
+    </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><img src="http://i.dailymail.co.uk/i/pix/2012/05/26/article-0-13364FFB000005DC-963_964x601.jpg"></div>
+</div>
+<div class="section white" id="faq">
+    <div class="row container, center-align">
+      <h1>FAQ Here</h1>
+    </div>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2016 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
