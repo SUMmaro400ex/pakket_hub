@@ -23,21 +23,10 @@
                 <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
               </div> -->
               <% if current_user %>
-                <% puts current_user %>
                 <%= link_to("Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-primary") %>
               <% else %>
-                <%= form_for(:user, url: session_path(:user)) do |f| %>
-                  <div class="field">
-                    <%= f.label :email %>
-                    <%= f.email_field :email, autofocus: true %>
-                    <%= f.label :password %>
-                    <%= f.password_field :password, autocomplete: "off" %>
-
-                  <div class="actions">
-                    <%= f.submit "Log in" , :class => "btn btn-primary" %>
-                  </div>
-                  </div>
-              <% end %>
+                <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-left" href="users/sign_in">Log In</a></div>
+                <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-left" href="users/sign_up">Sign Up</a></div>
               <% end %>
 
 
