@@ -1,5 +1,5 @@
 body {
-	
+
 }
 
 
@@ -13,7 +13,8 @@ section{
 }
 
 .jumbotron{
-	background:#1b222a url(wing.jpg) no-repeat top center;
+	background:#1b222a url(wing.jpg) no-repeat center center fixed;
+	background-size: 100%;
 	color: #fff;
 	height: 600px;
 	overflow: none;
@@ -108,12 +109,12 @@ section#howitworks p{
 section#guide{
 	background:#fff url(boxcopy.jpg) no-repeat top center;
 	color: #fff;
-	
+
 }
 section#guide p{
 	padding: 40px 40px 10px 40px;
 	font-size: 22px;
-		
+
 }
 section#guide h1{
 	padding-bottom: 20px;
@@ -137,7 +138,7 @@ section#guide ul{
 	float: right !important;
 	color: #fff;
 	margin-right: 20px;
-	
+
 }
 .col-md-2{
 	float: right !important;
@@ -260,7 +261,7 @@ section#Start_campaign .selectContainer .form-control-feedback {
 .jumbotron h1{
 	margin-top: 10px;
 }
-	
+
 }
 @media(max-width:500px){
 
@@ -274,7 +275,7 @@ section#Start_campaign .selectContainer .form-control-feedback {
 .jumbotron img.app-btn{
 	width: 60%;
 	margin:0 auto 30px auto;
-	display: block; 
+	display: block;
 }
 section#feature ul li{
 	font-size: 19px !important;
@@ -286,7 +287,3 @@ footer p{
 }
 
 	*/
-
-
-
-
