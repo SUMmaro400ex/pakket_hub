@@ -1,0 +1,18 @@
+
+<p> Distance between two locations is
+<%= @distance %>
+ </p>
+<p> lat of the middle point is
+<%= @lat_middle %>
+ </p>
+<p> lng of the middle point is
+<%= @lng_middle %>
+ </p>
+<%= "https://www.google.com/maps/embed/v1/place?key=AIzaSyDazU0gvbBdl2aKSaBUMNHkqG6uVLYW7jI&q=loc:#{@lat_middle}+#{@lng_middle}" %>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDazU0gvbBdl2aKSaBUMNHkqG6uVLYW7jI&q=loc:#{@lat_middle}+#{@lng_middle}" allowfullscreen>
+</iframe>
