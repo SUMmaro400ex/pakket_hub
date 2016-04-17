@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417004524) do
+ActiveRecord::Schema.define(version: 20160417030046) do
 
   create_table "contact_phone_numbers", force: :cascade do |t|
     t.string "type",            limit: 64,  null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160417004524) do
     t.string  "amount",                 limit: 255
     t.string  "transaction_identifier", limit: 255
     t.string  "surcharge",              limit: 255
+    t.boolean "complete"
   end
 
   add_index "exchanges", ["beneficiary_id"], name: "index_exchanges_on_beneficiary_id", using: :btree
