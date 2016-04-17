@@ -8,6 +8,7 @@ class RequestController < ApplicationController
   end
 
   def new
+
   end
 
 end

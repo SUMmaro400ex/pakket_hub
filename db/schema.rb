@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417030046) do
+ActiveRecord::Schema.define(version: 20160417073604) do
 
   create_table "contact_phone_numbers", force: :cascade do |t|
     t.string "type",            limit: 64,  null: false
@@ -124,13 +124,16 @@ ActiveRecord::Schema.define(version: 20160417030046) do
   add_index "phone_numbers", ["area_code", "subscriber_number", "country_code"], name: "main_idx", unique: true, using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.integer  "beneficiary_id", limit: 4,  null: false
-    t.integer  "requestor_id",   limit: 4,  null: false
+    t.integer  "beneficiary_id", limit: 4,   null: false
+    t.integer  "requestor_id",   limit: 4,   null: false
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string   "status",         limit: 32, null: false
+    t.string   "status",         limit: 32,  null: false
+    t.string   "item",           limit: 255
+    t.string   "item_url",       limit: 255
+    t.string   "amount",         limit: 255
   end
 
   add_index "requests", ["start_date", "end_date"], name: "index_requests_on_start_date_and_end_date", using: :btree
