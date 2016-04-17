@@ -22,9 +22,9 @@
       <%= request_form.label :radius %>
       <%= request_form.text_field :radius %>
       <%= request_form.label :start_date %>
-      <%= request_form.text_field :start_date %>
+      <%= request_form.date_field :start_date %>
       <%= request_form.label :end_date %>
-      <%= request_form.text_field :end_date %>
+      <%= request_form.date_field :end_date %>
       <br>
       <%= request_form.fields_for :location, @request.location || Location.new do |location_form| %>
         <%= location_form.label :latitude %>

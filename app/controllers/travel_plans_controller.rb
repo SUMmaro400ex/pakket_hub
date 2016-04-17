@@ -2,7 +2,7 @@ class TravelPlansController < BaseController
 
   def search
     pakket_hub_request = Request.new(params[:request])
-    PakketHub::TravelPlanSearcher.search(pakket_hub_request)
+    @results = PakketHub::TravelPlanSearcher.search(pakket_hub_request)
 
     render :index
   end

@@ -21,9 +21,9 @@
     <%= travel_plan_form.label :radius %>
     <%= travel_plan_form.text_field :radius %>
     <%= travel_plan_form.label :start_date %>
-    <%= travel_plan_form.text_field :start_date %>
+    <%= travel_plan_form.date_field :start_date %>
     <%= travel_plan_form.label :end_date %>
-    <%= travel_plan_form.text_field :end_date %>
+    <%= travel_plan_form.date_field :end_date %>
     <%= travel_plan_form.fields_for :destination, @travel_plan.destination || Location.new do |location_form| %>
       <%= location_form.label :latitude %>
       <%= location_form.text_field :latitude %>
