@@ -18,8 +18,8 @@
   <div class="col-md-6">
     <h2>Available Couriers For Your Request</h2>
     <% @results.each do |result| %>
-    <p>Longitude <%= result.location.longitude %> Latitude <%= result.location.latitude %>
-      Start Date <%= result.start_date %> End Date <%= result.end_date %>
+    <<p><%= result.id%> Longitude:   <%= result.location.longitude %> Latitude:    <%= result.location.latitude %>
+      Start Date:   <%= result.start_date %> End Date:   <%= result.end_date %> <%= button_to "Select" %>
     </p>
     <% end %>
   </div>
@@ -35,10 +35,9 @@
     <%= location_form.text_field :latitude %>
     <%= location_form.text_field :longitude %>
   <% end %></div>
-  <%= request_form.submit %>
+  <br>
+  <i id="submit"><%= request_form.submit %></i>
 <% end %>
-
-<% button_to "Save Request",  %>
 
 <div class="row">
 <div class="col-md-6">
