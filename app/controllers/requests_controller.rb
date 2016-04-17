@@ -14,7 +14,7 @@ class RequestsController < BaseController
 
 
     @travel_plan = TravelPlan.new(params[:travel_plan])
-    @results = PakketHub::RequestSearcher.search(@travel_plan)
+    @results = PakketHub::Request.all.to_a
     @travel_plan.courier_id = current_user.try(:id)
     render :index
   end
@@ -30,6 +30,7 @@ class RequestsController < BaseController
   def create
     puts "sergii"
     Request.create! params[:request]
+    redirect_to root_path
   end
 
 end
