@@ -16,25 +16,27 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    <h2>Available Requests for your Travel Time</h2>
-<% @results.each do |result| %>
-  <p><%= result.id %>
+    <h2>Available Couriers For Your Request</h2>
+    <% @results.each do |result| %>
+      <p><%= result.id %></p>
     <% end %>
   </div>
 </div>
-
-<div id="invisible"><%= form_for @travel_plan, url: {controller: :travel_plans, action: :create} do |request_form| %>
+<div id="invisible"><%= form_for @pakket_hub_request, url: {controller: :requests, action: :create} do |request_form| %>
   <%= request_form.text_field :radius %>
   <%= request_form.date_field :start_date %>
   <%= request_form.date_field :end_date %>
-  <%= request_form.text_field :courier_id %>
+  <%= request_form.text_field :beneficiary_id %>
+  <%= request_form.text_field :requestor_id %>
   <br>
-  <%= request_form.fields_for :location, @travel_plan.location || Location.new do |location_form| %>
+  <%= request_form.fields_for :location, @pakket_hub_request.location || Location.new do |location_form| %>
     <%= location_form.text_field :latitude %>
     <%= location_form.text_field :longitude %>
   <% end %></div>
   <%= request_form.submit %>
 <% end %>
+
+<% button_to "Save Request",  %>
 
 <div class="row">
 <div class="col-md-6">
