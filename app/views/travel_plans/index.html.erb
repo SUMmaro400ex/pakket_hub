@@ -28,7 +28,7 @@
   <div class="col-md-6">
     <h1>Available Couriers For Your Request</h1>
     <% @results.each do |result| %>
-    <h4><%= result.id%> Longitude:   <%= result.location.longitude %> Latitude:    <%= result.location.latitude %>
+    <h4><%= result.id%> Longitude:   <%= @lng%> Latitude:    <%=  @lat %>
       Start Date:   <%= result.start_date %> End Date:   <%= result.end_date %> <%= button_to "Select" %>
     </h4>
     <% end %>
