@@ -3,7 +3,7 @@ class RequestsController < BaseController
 
   def search
     @travel_plan = TravelPlan.new(params[:travel_plan])
-    @results = PakketHub::Request.search(@travel_plan)
+    @results = PakketHub::Request.all.to_a
     @travel_plan.courier_id = current_user.try(:id)
     render :index
   end

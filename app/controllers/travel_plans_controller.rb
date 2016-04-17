@@ -2,16 +2,14 @@ class TravelPlansController < BaseController
   before_action :authenticate_user!, only: :create
 
   def search
-
-  	put "sergii"
-  	address = params[:address]
-    response = RestClient.get "https://maps.googleapis.com/maps/api/geocode/json",
-     {:params => {'address' => address,
-            'key'=>'AIzaSyDazU0gvbBdl2aKSaBUMNHkqG6uVLYW7jI'}}
-  lat = JSON.parse(response)["results"][0]["geometry"]["location"]["lat"]
-  lng = JSON.parse(response)["results"][0]["geometry"]["location"]["lng"]
-    params[:latitude] = lat
-    params[:longitude] = lng
+  # 	address = params[:address]
+  #   response = RestClient.get "https://maps.googleapis.com/maps/api/geocode/json",
+  #    {:params => {'address' => address,
+  #           'key'=>'AIzaSyDazU0gvbBdl2aKSaBUMNHkqG6uVLYW7jI'}}
+  # lat = JSON.parse(response)["results"][0]["geometry"]["location"]["lat"]
+  # lng = JSON.parse(response)["results"][0]["geometry"]["location"]["lng"]
+  #   params[:latitude] = lat
+  #   params[:longitude] = lng
 
 
     @pakket_hub_request = Request.new(params[:request])

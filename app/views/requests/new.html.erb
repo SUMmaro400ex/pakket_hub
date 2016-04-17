@@ -17,7 +17,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    <h2>Create Request</h2>
+    <h2>Begin Request</h2>
     <%= form_for @request, url: {controller: :travel_plans, action: :search} do |request_form| %>
       <%= request_form.label :radius %>
       <%= request_form.text_field :radius %>
