@@ -56,8 +56,8 @@ class InitialSchema < ActiveRecord::Migration
     add_index :exchange_locations, :location_id
     
     create_table :locations do |t|
-      t.string :city, limit: 64, null: false
-      t.string :country, limit: 2, null: false
+      t.string :city, limit: 64
+      t.string :country, limit: 2
       t.string :state_code, limit: 2
       t.string :descriptive_key
       t.decimal :latitude, precision: 7, scale: 5

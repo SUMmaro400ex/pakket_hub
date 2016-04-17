@@ -12,7 +12,7 @@
           </div>
 
           <div id="navbar" class="collapse navbar-collapse">
-          
+
                 <div class="form-inline pull-right">
               <% if current_user %>
                 <%= link_to("Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-primary") %>
@@ -48,8 +48,8 @@
     <section id="topbuttons">
       <div class="row">
 
-        <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-right" href="/request/new"> Make a Request </a></div>
-        <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-left" href="/courier/new"> Become a Courrier</a></div>
+        <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-right" href="/requests/new"> Make a Request </a></div>
+        <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-left" href="/travel_plans/new"> Become a Courrier</a></div>
 
 
       </div>

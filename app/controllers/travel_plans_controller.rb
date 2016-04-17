@@ -1,10 +1,15 @@
 class TravelPlansController < BaseController
 
-  def index
+  def search
+    pakket_hub_request = Request.new(params[:request])
+    byebug
+    PakketHub::TravelPlanSearcher.search(pakket_hub_request)
 
+    render :index
   end
 
-  def search
+  def new
+    @travel_plan = TravelPlan.new
   end
   
 end

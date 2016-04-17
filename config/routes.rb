@@ -4,9 +4,11 @@ Rails.application.routes.draw do
  # post 'coordinates' => 'coordinates#show'
   resources :geolocation
   resources :coordinates
+  resources :requests
+  resources :travel_plans
 
-  get 'request/new' => 'request#new'
-  get 'courier/new' => 'courier#new'
+  post 'requests/search' => 'requests#search'
+  post 'travel_plans/search' => 'travel_plans#search'
   get 'about' => 'welcome#about'
   get 'contact' => 'welcome#contact'
   get 'privacy' => 'welcome#privacy'

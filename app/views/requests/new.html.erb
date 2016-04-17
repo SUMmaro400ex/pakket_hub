@@ -1,0 +1,10 @@
+<%= form_for @request, url: {controller: :travel_plans, action: :search} do |request_form| %>
+  <%= request_form.text_field :radius %>
+  <%= request_form.text_field :start_date %>
+  <%= request_form.text_field :end_date %>
+  <%= request_form.fields_for :location, @request.location || Location.new do |location_form| %>
+    <%= location_form.text_field :latitude %>
+    <%= location_form.text_field :longitude %>
+  <% end %>
+  <%= request_form.submit %>
+<% end %>
