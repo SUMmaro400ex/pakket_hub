@@ -4,4 +4,6 @@ class User < PakketHub::BaseModel
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_one :credit_card
 end
