@@ -23,3 +23,7 @@ img#logo{
   margin-top: -2vh;
   width: 10vw;
 }
+
+div#hide_me{
+	display:none;
+}

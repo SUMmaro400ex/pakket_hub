@@ -3,15 +3,14 @@ class TravelPlansController < BaseController
 
   def search
 
-  	put "sergii"
-  	address = params[:address]
+    address = params["request"]["location_attributes"]["address"]
     response = RestClient.get "https://maps.googleapis.com/maps/api/geocode/json",
      {:params => {'address' => address,
             'key'=>'AIzaSyDazU0gvbBdl2aKSaBUMNHkqG6uVLYW7jI'}}
-  lat = JSON.parse(response)["results"][0]["geometry"]["location"]["lat"]
-  lng = JSON.parse(response)["results"][0]["geometry"]["location"]["lng"]
-    params[:latitude] = lat
-    params[:longitude] = lng
+    lat = JSON.parse(response)["results"][0]["geometry"]["location"]["lat"]
+    lng = JSON.parse(response)["results"][0]["geometry"]["location"]["lng"]
+    params["request"]["location_attributes"][:latitude] = lat
+    params["request"]["location_attributes"][:longitude] = lng
 
 
     @pakket_hub_request = Request.new(params[:request])
@@ -20,7 +19,7 @@ class TravelPlansController < BaseController
     @pakket_hub_request.beneficiary_id = current_user.try(:id)
     @pakket_hub_request.requestor_id = current_user.try(:id)
 
-puts params.to_s
+	puts params.to_s
     render :index
   end
 

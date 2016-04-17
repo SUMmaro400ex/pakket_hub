@@ -17,7 +17,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    <h2>Create Request</h2>
+    <h2>Search For Couriers</h2>
     <%= form_for @request, url: {controller: :travel_plans, action: :search} do |request_form| %>
       <%= request_form.label :radius %>
       <%= request_form.text_field :radius %>
@@ -27,10 +27,12 @@
       <%= request_form.date_field :end_date %>
       <br>
       <%= request_form.fields_for :location, @request.location || Location.new do |location_form| %>
-        <%= location_form.label :latitude %>
+      <div id="hide_me">  <%= location_form.label :latitude %>
         <%= location_form.text_field :latitude %>
         <%= location_form.label :longitude %>
-        <%= location_form.text_field :longitude %>
+        <%= location_form.text_field :longitude %> </div>
+        <%= location_form.label :address %>
+        <%= location_form.text_field :address%>
       <% end %>
       <%= request_form.submit %>
     <% end %>
