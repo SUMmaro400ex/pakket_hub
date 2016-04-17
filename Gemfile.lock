@@ -2,6 +2,8 @@ PATH
   remote: ../pakket_hub_core
   specs:
     pakket_hub_core (0.1.0)
+      activerecord
+      activesupport
 
 GEM
   remote: https://rubygems.org/

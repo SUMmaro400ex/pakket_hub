@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416231705) do
+ActiveRecord::Schema.define(version: 20160417004524) do
 
   create_table "contact_phone_numbers", force: :cascade do |t|
     t.string "type",            limit: 64,  null: false
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 20160416231705) do
 
   add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
 
+  create_table "debits", force: :cascade do |t|
+    t.integer  "user_id",                limit: 4
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "transaction_identifier", limit: 255
+    t.string   "amount",                 limit: 255
+  end
+
+  add_index "debits", ["user_id"], name: "index_debits_on_user_id", using: :btree
+
   create_table "exchange_locations", force: :cascade do |t|
     t.integer "exchange_id", limit: 4,  null: false
     t.integer "location_id", limit: 4,  null: false
@@ -60,10 +70,13 @@ ActiveRecord::Schema.define(version: 20160416231705) do
   add_index "exchange_locations", ["location_id"], name: "index_exchange_locations_on_location_id", using: :btree
 
   create_table "exchanges", force: :cascade do |t|
-    t.integer "beneficiary_id", limit: 4,  null: false
-    t.integer "courier_id",     limit: 4,  null: false
-    t.integer "request_id",     limit: 4,  null: false
-    t.string  "status",         limit: 32, null: false
+    t.integer "beneficiary_id",         limit: 4,   null: false
+    t.integer "courier_id",             limit: 4,   null: false
+    t.integer "request_id",             limit: 4,   null: false
+    t.string  "status",                 limit: 32,  null: false
+    t.string  "amount",                 limit: 255
+    t.string  "transaction_identifier", limit: 255
+    t.string  "surcharge",              limit: 255
   end
 
   add_index "exchanges", ["beneficiary_id"], name: "index_exchanges_on_beneficiary_id", using: :btree
@@ -164,4 +177,5 @@ ActiveRecord::Schema.define(version: 20160416231705) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "credit_cards", "users"
+  add_foreign_key "debits", "users"
 end
