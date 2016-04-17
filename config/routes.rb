@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get 'request/new' => 'request#new'
   get 'courier/new' => 'courier#new'
+  get 'about' => 'welcome#about'
+  get 'contact' => 'welcome#contact'
+  get 'privacy' => 'welcome#privacy'
 
 
   devise_for :users
