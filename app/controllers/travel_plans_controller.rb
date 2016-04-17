@@ -3,8 +3,8 @@ class TravelPlansController < BaseController
 
   def search
     @pakket_hub_request = Request.new(params[:request])
-    @results = PakketHub::TravelPlanSearcher.search(@pakket_hub_request)
-
+    # @results = PakketHub::TravelPlanSearcher.search(@pakket_hub_request)
+    @results = PakketHub::TravelPlan.all.to_a
     @pakket_hub_request.beneficiary_id = current_user.try(:id)
     @pakket_hub_request.requestor_id = current_user.try(:id)
 
@@ -17,6 +17,8 @@ class TravelPlansController < BaseController
 
   def create
     TravelPlan.create! params[:travel_plan]
+    redirect_to root_path
+
   end
 
   def show
