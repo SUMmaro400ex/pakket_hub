@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :geolocation
   resources :coordinates
 
+  get 'request/new' => 'request#new'
+  get 'courier/new' => 'courier#new'
+
 
   devise_for :users
 
