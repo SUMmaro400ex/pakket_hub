@@ -59,6 +59,7 @@ class InitialSchema < ActiveRecord::Migration
       t.string :city, limit: 64
       t.string :country, limit: 2
       t.string :state_code, limit: 2
+      t.string :address
       t.string :descriptive_key
       t.decimal :latitude, precision: 7, scale: 5
       t.decimal :longitude, precision: 7, scale: 5
@@ -68,6 +69,7 @@ class InitialSchema < ActiveRecord::Migration
     add_index :locations, :descriptive_key
     add_index :locations, :latitude
     add_index :locations, :longitude
+    add_index :locations, :address
     add_index :locations, :state_code
     
     create_table :travel_plans do |t|
