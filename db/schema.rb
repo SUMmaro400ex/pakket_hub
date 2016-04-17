@@ -75,20 +75,19 @@ ActiveRecord::Schema.define(version: 20160417073604) do
   add_index "exchanges", ["request_id"], name: "index_exchanges_on_request_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
-    t.string  "city",          limit: 64, null: false
-    t.string  "country",       limit: 2,  null: false
-    t.string  "state_code",    limit: 2
-    t.integer "zip_5",         limit: 4
-    t.integer "zip_4",         limit: 4
-    t.integer "latitude",      limit: 4
-    t.integer "longitude",     limit: 4
-    t.integer "google_map_id", limit: 4
+    t.string  "city",            limit: 64,                          null: false
+    t.string  "country",         limit: 2,                           null: false
+    t.string  "state_code",      limit: 2
+    t.string  "descriptive_key", limit: 255
+    t.decimal "latitude",                    precision: 7, scale: 5
+    t.decimal "longitude",                   precision: 7, scale: 5
+    t.integer "google_map_id",   limit: 4
   end
 
+  add_index "locations", ["descriptive_key"], name: "index_locations_on_descriptive_key", using: :btree
   add_index "locations", ["latitude"], name: "index_locations_on_latitude", using: :btree
   add_index "locations", ["longitude"], name: "index_locations_on_longitude", using: :btree
   add_index "locations", ["state_code"], name: "index_locations_on_state_code", using: :btree
-  add_index "locations", ["zip_5", "zip_4"], name: "index_locations_on_zip_5_and_zip_4", using: :btree
 
   create_table "long_strings", force: :cascade do |t|
     t.string  "describable_type", limit: 64
@@ -126,11 +125,14 @@ ActiveRecord::Schema.define(version: 20160417073604) do
   create_table "requests", force: :cascade do |t|
     t.integer  "beneficiary_id", limit: 4,   null: false
     t.integer  "requestor_id",   limit: 4,   null: false
+    t.integer  "location_id",    limit: 4,   null: false
+    t.integer  "radius",         limit: 4,   null: false
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "status",         limit: 32,  null: false
+    t.integer  "size_code",      limit: 4
     t.string   "item",           limit: 255
     t.string   "item_url",       limit: 255
     t.string   "amount",         limit: 255
@@ -139,17 +141,21 @@ ActiveRecord::Schema.define(version: 20160417073604) do
   add_index "requests", ["start_date", "end_date"], name: "index_requests_on_start_date_and_end_date", using: :btree
 
   create_table "travel_plans", force: :cascade do |t|
-    t.integer  "courier_id",  limit: 4,   null: false
-    t.datetime "start_time",              null: false
+    t.integer  "courier_id",     limit: 4, null: false
+    t.integer  "location_id",    limit: 4, null: false
+    t.integer  "destination_id", limit: 4, null: false
+    t.integer  "radius",         limit: 4, null: false
+    t.datetime "start_time",               null: false
     t.datetime "end_time"
-    t.datetime "start_date",              null: false
-    t.datetime "end_date"
-    t.string   "destination", limit: 255, null: false
+    t.date     "start_date",               null: false
+    t.date     "end_date"
+    t.integer  "size_code",      limit: 4
   end
 
   add_index "travel_plans", ["start_date", "end_date"], name: "index_travel_plans_on_start_date_and_end_date", using: :btree
 
   create_table "users", force: :cascade do |t|
+    t.integer  "contact_id",             limit: 4
     t.string   "status",                 limit: 32,  default: "", null: false
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
