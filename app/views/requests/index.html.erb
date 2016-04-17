@@ -23,6 +23,19 @@
   </div>
 </div>
 
+<div id="invisible"><%= form_for @travel_plan, url: {controller: :travel_plans, action: :create} do |request_form| %>
+  <%= request_form.text_field :radius %>
+  <%= request_form.date_field :start_date %>
+  <%= request_form.date_field :end_date %>
+  <%= request_form.text_field :courier_id %>
+  <br>
+  <%= request_form.fields_for :location, @travel_plan.location || Location.new do |location_form| %>
+    <%= location_form.text_field :latitude %>
+    <%= location_form.text_field :longitude %>
+  <% end %></div>
+  <%= request_form.submit %>
+<% end %>
+
 <div class="row">
 <div class="col-md-6">
 </div>

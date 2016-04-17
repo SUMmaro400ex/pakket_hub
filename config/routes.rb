@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'contact' => 'welcome#contact'
   get 'privacy' => 'welcome#privacy'
 
+  get 'login' => 'users#sign_in'
 
   devise_for :users
 

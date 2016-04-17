@@ -161,7 +161,9 @@ section#guide ul{
 	margin-left: 40px;
 }
 
-
+#invisible{
+	display: none;
+}
 
 
 section#title-bar{
