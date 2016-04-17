@@ -1,0 +1,15 @@
+
+
+
+<%= form_tag( { :action => :create, :controller => :coordinates}, { :method => :post }) do %>
+  Address of your home:<br>
+  <input type="text" name="address1" value="531 NE 68th Street Miami Florida" style="width: 400px;">
+  <br>
+  Hackathon address:<br>
+  <input type="text" name="address2" value="315 N.E. Second AveBuilding 8, 5th Floor, Miami, FL, US, 33132" style="width: 400px;">
+  <br>
+  <input type="submit" value="Submit">
+
+<% end %>
+
+<p> Enter your address to see geo coordinates</p>
