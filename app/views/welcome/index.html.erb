@@ -1,54 +1,171 @@
-<nav id="landing">
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo"><img id="pakket-logo" src="<%= asset_path("logo")%>"></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a class="scroll" href="#more-info">More Info</a></li>
-      <li><a class="scroll" href="#faq">FAQ</a></li>
-      <li>
-        <form class="col s2">
-          <div class="left input-field col s1">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="icon_prefix" type="text" class="validate">
-            <label for="icon_prefix">Login</label>
-          </div>
-          <div class="right input-field col s1">
-            <i class="material-icons prefix">lock</i>
-            <input id="lock_outline" type="text" class="validate">
-            <label for="lock_outline">Password</label>
-          </div>
-        </form>
-      </li>
-    </ul>
+<div class="jumbotron" id="top">
+  <div class="container">
+    <div class="row">
 
-</div>
-</nav>
-<div class="row">
-<div id="top-parallax" class="parallax-container">
-  <div class="parallax"><img class="parallax-image" src="<%=asset_path("packages")%>"></div>
-</div>
-</div>
-<div class="section white">
-    <div class="row container, center-align">
-      <h1>Welcome to Pakket Hub</h1>
-      <h3>Peer to Peer Delivery</h3>
-      <p>Easily save money or earn money</p>
-      <%= link_to "Make a Request", "/requester/new", :id =>"requester", :class =>"waves-effect waves-light btn" %>
-      <%= link_to "Become a Courrier", "/courrier/new", :id => "courrier", :class =>"waves-effect waves-light btn"  %>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+
+            <a class="navbar-brand em-text" href="#"><h2>Pakket Hub</h2></a>
+
+
+          </div>
+
+          <div id="navbar" class="collapse navbar-collapse">
+
+            <form class="form-inline pull-right">
+              <!-- <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+              </div> -->
+              <% if current_user %>
+                <% puts current_user %>
+                <%= link_to("Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-primary") %>
+              <% else %>
+                <%= form_for(:user, url: session_path(:user)) do |f| %>
+                  <div class="field">
+                    <%= f.label :email %>
+                    <%= f.email_field :email, autofocus: true %>
+                    <%= f.label :password %>
+                    <%= f.password_field :password, autocomplete: "off" %>
+
+                  <div class="actions">
+                    <%= f.submit "Log in" , :class => "btn btn-primary" %>
+                  </div>
+                  </div>
+              <% end %>
+              <% end %>
+
+
+            </form>
+
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
     </div>
-</div>
-<div class="parallax-container">
-  <div class="parallax"><img src="<%= asset_path("plane.jpg") %>"></div>
-</div>
-<div class="section white" id="more-info">
-    <div class="row container, center-align">
-      <h1>A bunch more info here</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><h1>Welcome to Pakket Hub</h1></p>
+      <p><h2>Global Buying Made Human</h2></p>
     </div>
+    <section id="topbuttons">
+      <div class="row">
+
+        <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-right" href="/request/new"> Make a Request </a></div>
+        <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-left" href="/courier/new"> Become a Courrier</a></div>
+
+
+      </div>
+    </section>
+  </div>
 </div>
-<div class="parallax-container">
-  <div class="parallax"><img src="http://i.dailymail.co.uk/i/pix/2012/05/26/article-0-13364FFB000005DC-963_964x601.jpg"></div>
-</div>
-<div class="section white" id="faq">
-    <div class="row container, center-align">
-      <h1>FAQ Here</h1>
+
+<section id="howitworks">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>What is Pakket Hub?</h1>
+        <h3>We enable Peer to Peer Delivery</h3>
+        <p></p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="col-md-6 text-center">
+        <h3>What can Peer to Peer Delivery do for me?</h3>
+        <p><strong>A LOT!</strong> For a plethora of reasons, many products vary greatly in price depending on the country of purchase.
+          We enable consumers to buy from all over the world and have their item hand delivered! Saving money and time!</p>
+          <h3>So they're going to buy my order where they live, fly to me, and deliver it to me? That doesn't make sense!</h3>
+          <p>People travel all around the world everyday! If someone was already planning to travel to your area they can sign up to be a courier and make the delivery!</p>
+        </div>
+        <div class="col-md-6 text-center">
+          <h3>Oh I get it. Pakket Hub will connect me with someone already planning to travel to me?</h3>
+          <p>Exactly! They get to earn a few extra bucks, and you can get the fair price for your order!</p>
+          <br>
+          <br>
+          <h3>Can I become a courier?</h3>
+          <p>Absolutely! If you're planning to travel and think you can provide the service, go right ahead and sign up below!</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-4 col-md-offset-2">
+        <p>Sign up and find list of requests or courriers</p>
+        <br>
+        <br>
+        <p>Payments stored safely in escrow until the transaction closes</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 ">
+    </div>
+
+    <div class="col-md-4">
+      <p>Easily earn money while travelling</p>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</section>
+
+<section id="Register_Earn">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <h1>Sign in or Sign up</h1>
+      </div>
+    </div>
+
+    <div class="row">
+
+
+
+      <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-right" href="users/sign_in">Sign In </a></div>
+      <div class="col-md-6"> <a class="btn btn-lg btn-primary pull-left" href="users/sign_up">Sign Up</a></div>
+
+
+    </div>
+  </div>
 </div>
+
+
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-xs-12">
+        <p>Copyright &copy; 2016, All rights Reserved</p>
+      </div>
+
+    </div>
+
+  </div>
+</footer>

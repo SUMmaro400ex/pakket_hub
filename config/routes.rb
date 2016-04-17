@@ -5,8 +5,16 @@ Rails.application.routes.draw do
   resources :geolocation
   resources :coordinates
 
+  get 'request/new' => 'request#new'
+  get 'courier/new' => 'courier#new'
+  get 'about' => 'welcome#about'
+  get 'contact' => 'welcome#contact'
+  get 'privacy' => 'welcome#privacy'
+
 
   devise_for :users
+
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

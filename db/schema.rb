@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417004524) do
+ActiveRecord::Schema.define(version: 20160417030046) do
 
   create_table "contact_phone_numbers", force: :cascade do |t|
     t.string "type",            limit: 64,  null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160417004524) do
     t.string  "amount",                 limit: 255
     t.string  "transaction_identifier", limit: 255
     t.string  "surcharge",              limit: 255
+    t.boolean "complete"
   end
 
   add_index "exchanges", ["beneficiary_id"], name: "index_exchanges_on_beneficiary_id", using: :btree
@@ -149,8 +150,7 @@ ActiveRecord::Schema.define(version: 20160417004524) do
   add_index "travel_plans", ["start_date", "end_date"], name: "index_travel_plans_on_start_date_and_end_date", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.integer  "contact_id",             limit: 4,                null: false
-    t.string   "status",                 limit: 32,               null: false
+    t.string   "status",                 limit: 32,  default: "", null: false
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
@@ -165,7 +165,6 @@ ActiveRecord::Schema.define(version: 20160417004524) do
     t.datetime "updated_at",                                      null: false
   end
 
-  add_index "users", ["contact_id"], name: "index_users_on_contact_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

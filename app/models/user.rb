@@ -6,4 +6,5 @@ class User < PakketHub::BaseModel
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :credit_card
+
 end
